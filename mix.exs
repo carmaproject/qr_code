@@ -44,7 +44,7 @@ defmodule QRCode.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:result, "~> 1.3.0"},
+      {:towel, github: "carmaproject/towel", ref: "471953a", override: true},
       {:ex_maybe, "~> 1.1.1"},
       {:ex_doc, "~> 0.23.0", only: :dev},
       {:credo, "~> 1.5.4", only: [:dev, :test]},
