@@ -53,7 +53,7 @@ defmodule QRCode.MixProject do
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:xml_builder, "~> 2.1.1"},
       {:csvlixir, "~> 2.0.4", only: [:dev, :test]},
-      {:matrix_reloaded, "~> 2.2.1"},
+      {:matrix_reloaded, github: "carmaproject/matrix_reloaded"},
       {:propcheck, "~> 1.1", only: :test}
     ]
   end
