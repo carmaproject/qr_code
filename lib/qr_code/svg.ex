@@ -11,6 +11,7 @@ defmodule QRCode.Svg do
           xlink: String.t(),
           width: ExMaybe.t(integer),
           height: ExMaybe.t(integer),
+          stroke_opacity: ExMaybe.t(pos_integer),
           body: String.t(),
           rank_matrix: ExMaybe.t(pos_integer)
         }
@@ -19,6 +20,7 @@ defmodule QRCode.Svg do
             xlink: "http://www.w3.org/1999/xlink",
             width: nil,
             height: nil,
+            stroke_opacity: 0,
             body: nil,
             rank_matrix: nil
 
@@ -107,7 +109,8 @@ defmodule QRCode.Svg do
            xmlns: xmlns,
            xlink: xlink,
            body: body,
-           rank_matrix: rank_matrix
+           rank_matrix: rank_matrix,
+           stroke_opacity: stroke_opacity
          },
          %SvgSettings{
            background_opacity: bg_tr,
@@ -122,7 +125,8 @@ defmodule QRCode.Svg do
        xmlns: xmlns,
        xlink: xlink,
        width: rank_matrix * scale,
-       height: rank_matrix * scale
+       height: rank_matrix * scale,
+       'stroke-opacity': stroke_opacity
      }, [background_rect(bg, bg_tr), to_group(body, qc)]}
     |> XmlBuilder.generate(format: format)
   end
